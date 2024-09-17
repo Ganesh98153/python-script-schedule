@@ -2,7 +2,8 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '0 0 * * 1' # At 00:00 on Monday
+    - cron: '30 9 * * *'  # Every day at 9:30 AM
+    - cron: '30 18 * * *' # Every day at 6:30 PM
 
 jobs:
   build:
@@ -24,9 +25,9 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          SOME_SECRET: ${{ secrets.SOME_SECRET }}
+          SOME_SECRET: ${{ secrets.MY_SECRET_NAME }}
         run: python main.py
-          
+            
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
