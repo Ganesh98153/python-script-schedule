@@ -37,7 +37,7 @@ jobs:
           git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
           
       - name: push changes
-        uses: Ganesh98153/github-push-action@v0.6.0
+        uses: Ganesh98153/python-script-schedule
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main 
