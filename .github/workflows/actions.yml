@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '45 3 * * 0-5'  # Every day at 3:45 AM UTC (9:30 AM NPT), excluding Saturday
     - cron: '45 12 * * 0-5' # Every day at 12:45 PM UTC (6:30 PM NPT), excluding Saturday
-    - cron: '12 11 * * 0-5'  # Every day at 10:07 AM UTC (3:52 PM NPT), excluding Saturday
+    - cron: '10 10 * * 0-5'  # Every day at 10:07 AM UTC (3:52 PM NPT), excluding Saturday
 
 jobs:
   build:
@@ -28,16 +28,3 @@ jobs:
         env:
           MY_SECRET_NAME: '98153'
         run: python main.py
-            
-      - name: commit files
-        run: |
-          git config --local user.email "ganesh.tiwari552@gmail.com"
-          git config --local user.name "Ganesh Tiwari"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
-          
-      - name: push changes
-        uses: Ganesh98153/python-script-schedule
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
