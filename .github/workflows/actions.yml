@@ -1,7 +1,10 @@
 name: run main.py
 
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '45 3 * * 0-5'  # Every day at 3:45 AM UTC (9:30 AM NPT), excluding Saturday
+    - cron: '45 12 * * 0-5' # Every day at 12:45 PM UTC (6:30 PM NPT), excluding Saturday
+    - cron: '41 10 * * 0-5'  # Every day at 10:07 AM UTC (3:52 PM NPT), excluding Saturday
 
 
 jobs:
