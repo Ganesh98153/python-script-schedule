@@ -2,7 +2,8 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '45 10 * * 0-5'  # Every day at 3:45 AM UTC (9:30 AM NPT), excluding Saturday
+    - cron: '45 3 * * 1-5'
+    - cron: '15 11 * * 1-5'
 
 
 jobs:
