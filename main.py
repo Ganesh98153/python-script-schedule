@@ -74,7 +74,7 @@ json_data = {
 }
 
 response = requests.post(
-    'https://bitskraft.rigohr.com/v1/leave-time/attendance/manual',
+    'https://api.app.rigohr.com/v1/leave-time/attendance/manual',
     cookies=cokies_dict,
     params=params,
     headers=headers,
